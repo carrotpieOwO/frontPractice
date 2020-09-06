@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <!--브라우저 기본내장 css reset-->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" media="(max-width:1240px)" href="css/main_medium.css">
+    <link rel="stylesheet" media="(max-width: 768px)" href="css/main_small.css">
     <script defer src="main.js"></script>
 </head>
 
@@ -222,28 +224,31 @@
     </div>
 
     <script>
+        // Initialize Google Map.
         function initMap() {
-            const myLatLon = {
+
+            const myLatLng = {
                 lat: 37.782293,
-                lon: -122.391240
+                lng: -122.391240
             }
-            const map = new google.maps.Map(
-                document.getElementById('map'),
-                {
-                    center: myLatLon,
-                    scrollwheel: flase,
-                    zoom: 18
-                }
-            );
-            const marker = new google.map.Marker({
-                position: myLatLon,
+
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                scrollwheel: false,
+                zoom: 18
+            })
+
+            const marker = new google.maps.Marker({
+                position: myLatLng,
                 map: map,
                 title: 'GitHub'
-            });
+            })
+
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=" AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=initMap"
         async defer></script>
+
 </body>
 
 </html>
